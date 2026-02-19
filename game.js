@@ -1,6 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 let userGuess = Number(prompt("Enter a number between 1 - 10, or type 999 to exit:")); 
-let attempts = 0;
+let attempts = 1;
 
 
 // Prompt user for a number between 1 and 10, or type 999 to exit.
@@ -14,10 +14,16 @@ while (randomNumber !== userGuess) {
     } else if (randomNumber < userGuess && userGuess != 999) {
         attempts++;
         userGuess = Number(prompt("Too high!")); 
-    } 
+
+    } else if (userGuess === 999) {
+        break;
+
+    } else {
+        userGuess = Number(prompt("Invalid input. Please enter a number."))
+    }
 }
 
-if (randomNumber == userGuess) {
+if (randomNumber === userGuess) {
     alert(`Congratulations, you've guessed it in ${attempts} tries!`); 
 }
 
