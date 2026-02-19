@@ -6,19 +6,21 @@ let attempts = 0;
 // Prompt user for a number between 1 and 10, or type 999 to exit.
 
 
-while (randomNumber != userGuess) { 
-    } if (randomNumber > userGuess) {
+while (randomNumber !== userGuess) {
+    if (randomNumber > userGuess) {
         attempts++;
         userGuess = Number(prompt("Too low!")); 
-    } else if (randomNumber < userGuess) {
+        
+    } else if (randomNumber < userGuess && userGuess != 999) {
         attempts++;
         userGuess = Number(prompt("Too high!")); 
-
-    } else if (randomNumber == 999 ) {
-        userGuess = randomNumber
-    } else {
-        alert("Congratulations, you've guessed it in ${attempts} tries!"); 
+    } 
 }
+
+if (randomNumber == userGuess) {
+    alert(`Congratulations, you've guessed it in ${attempts} tries!`); 
+}
+
 
 // Create while loop that continues for as long as the user guesses are incorrect.
 // Loop should count the number of guesses.
