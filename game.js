@@ -1,5 +1,9 @@
 let randomNumber = Math.floor(Math.random() * 10) + 1;
-let userGuess = Number(prompt("Enter a number between 1 - 10, or type 999 to exit:")); 
+let userGuess = prompt("Enter a number between 1 - 10, or type 999 to exit:")
+if (userGuess === "") {
+    userGuess = undefined
+}
+let userGuess = Number(userGuess); 
 let attempts = 1;
 
 
