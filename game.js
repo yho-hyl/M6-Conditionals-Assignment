@@ -1,9 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 10) + 1;
-let userGuess = prompt("Enter a number between 1 - 10, or type 999 to exit:")
-if (userGuess === "") {
-    userGuess = undefined
-}
-let userGuess = Number(userGuess); 
+let userGuess = Number(prompt("Enter a number between 1 - 10, or type 999 to exit:"));
+
 let attempts = 1;
 
 
@@ -11,7 +8,10 @@ let attempts = 1;
 
 
 while (randomNumber !== userGuess) {
-    if (randomNumber > userGuess) {
+    if (userGuess == "") {
+        userGuess = undefined;
+    
+    } else if (randomNumber > userGuess) {
         attempts++;
         userGuess = Number(prompt("Too low!")); 
         
